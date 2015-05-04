@@ -7,7 +7,7 @@
   <li>Interfaces e Layout managers</li>
   <li>ListViews e Adapters</li>
   <li>Navegação e intents</li>
-  <li>Ciclo de vida das Activitys<li>
+  <li>Ciclo de vida das Activitys</li>
   <li>App Resources</li>
   <li>SQLite database</li>
   <li>Conectando-se a web services RESTful</li>
