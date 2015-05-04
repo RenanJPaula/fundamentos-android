@@ -10,7 +10,7 @@
   <li>Ciclo de vida das Activitys<li>
   <li>App Resources</li>
   <li>SQLite database</li>
-  <li>Conectando-se a web services RESTful<li>
+  <li>Conectando-se a web services RESTful</li>
   <li>Visão para tablets com Fragments</li>
   <li>Geolocalização</li>
 </ol>
