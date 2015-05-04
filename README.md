@@ -3,10 +3,10 @@
 
 <h2>Aulas</h2>
 <ol>
-  <li>Android Studio e debugging tools</li>
+  <li>Android Studio e Debugging tools</li>
   <li>Interfaces e Layout managers</li>
   <li>ListViews e Adapters</li>
-  <li>Navegação e intents</li>
+  <li>Navegação e Intents</li>
   <li>Ciclo de vida das Activitys</li>
   <li>App Resources</li>
   <li>SQLite database</li>
