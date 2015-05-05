@@ -4,7 +4,7 @@
 <h2>Aulas</h2>
 <ol>
   <li>Android Studio e Debugging tools</li>
-  <li>Interfaces e Layout managers</li>
+  <li>Activitys e Layouts</li>
   <li>ListViews e Adapters</li>
   <li>Navegação e Intents</li>
   <li>Ciclo de vida das Activitys</li>
