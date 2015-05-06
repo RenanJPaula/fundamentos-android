@@ -12,7 +12,7 @@
   <li>SQLite database</li>
   <li>Conectando-se a web services RESTful</li>
   <li>Visão para tablets com Fragments</li>
-  <li>Geolocalização</li>
+  <li>Geolocalização e integração com o Maps</li>
 </ol>
 
 <hr/>
