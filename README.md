@@ -3,16 +3,7 @@
 
 <h2>Aulas</h2>
 <ol>
-  <li>Android Studio e Debugging tools</li>
-  <li>Activitys e Layouts</li>
-  <li>ListViews e Adapters</li>
-  <li>Navegação e Intents</li>
-  <li>Ciclo de vida das Activitys</li>
-  <li>App Resources</li>
-  <li>SQLite database</li>
-  <li>Conectando-se a web services RESTful</li>
-  <li>Visão para tablets com Fragments</li>
-  <li>Geolocalização e integração com o Maps</li>
+  <li><a href="https://docs.google.com/presentation/d/1BYDn1c0tYpRTrv_8pzUZf_HD8znF9SA8c16SLiQLNhU/edit?usp=sharing">Android Framework e Android Studio</a></li>
 </ol>
 
 <hr/>
