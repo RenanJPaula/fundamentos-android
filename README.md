@@ -14,7 +14,7 @@
   <li><a href="">SQLite</a></li>
   <li><a href="">HTTP e REST</a></li>
   <li><a href="">Android Notifications</a></li>
-  <li><a href="">Desafio</a></li>
+  <li><a href="">Publicação de Aplicativos</a></li>
 </ol>
 
 <hr/>
