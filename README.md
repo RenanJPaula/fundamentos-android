@@ -1,5 +1,5 @@
 <h1>Fundamentos do Android</h1>
-<p>Curso destinado a introdução e aplicação dos conceitos básicos para o desenvolvimentos de aplicativos Android.</p>
+<p>Curso destinado a introdução e aplicação dos conceitos básicos para o desenvolvimento de aplicativos Android.</p>
 
 <h2>Aulas</h2>
 <ol>
