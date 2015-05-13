@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Minha Aplicação</string>
+
+    <string name="lbl_user">Usuário</string>
+    <string name="lbl_password">Senha</string>
+    <string name="lbl_sign_in">Entrar</string>
+</resources>
