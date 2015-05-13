@@ -17,7 +17,7 @@ public class ServiceOrderListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.service_order_list);
 
         mListViewServiceOrders = (ListView) findViewById(R.id.listViewServiceOrders);
         String[] values = {"obj1", "obj2", "obj3", "obj4"};
