@@ -9,26 +9,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-
     <EditText
+        android:id="@+id/editTextUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:hint="@string/lbl_user"
-        android:id="@+id/editTextUser" />
+        android:inputType="textPersonName" />
 
     <EditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:hint="@string/lbl_password"
-        android:id="@+id/editTextPassword" />
+        android:inputType="textPassword" />
 
     <Button
+        android:id="@+id/buttonSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_sign_in"
-        android:id="@+id/buttonSignIn" />
-
+        android:text="@string/lbl_sign_in" />
 
 </LinearLayout>
