@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import br.com.example.myapplication.R;
+import br.com.example.myapplication.models.entities.ServiceOrder;
 
 public class ServiceOrderListActivity extends AppCompatActivity {
 
@@ -20,9 +21,8 @@ public class ServiceOrderListActivity extends AppCompatActivity {
         setContentView(R.layout.service_order_list);
 
         mListViewServiceOrders = (ListView) findViewById(R.id.listViewServiceOrders);
-        String[] values = {"obj1", "obj2", "obj3", "obj4"};
 
-        BaseAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, values);
+        BaseAdapter adapter = new ServiceOrderAdapter(ServiceOrder.getAll(), this);
 
         mListViewServiceOrders.setAdapter(adapter);
     }

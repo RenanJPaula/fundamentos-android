@@ -4,4 +4,5 @@
     <string name="lbl_user">User</string>
     <string name="lbl_password">Password</string>
     <string name="lbl_sign_in">Sign in</string>
+    <string name="lbl_service_orders">Service Orders</string>
 </resources>
