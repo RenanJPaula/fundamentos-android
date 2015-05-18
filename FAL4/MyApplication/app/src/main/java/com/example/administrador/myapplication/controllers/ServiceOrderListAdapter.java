@@ -1,7 +1,6 @@
 package com.example.administrador.myapplication.controllers;
 
 import android.app.Activity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,22 +8,27 @@ import android.widget.TextView;
 
 import com.example.administrador.myapplication.R;
 import com.example.administrador.myapplication.models.entities.ServiceOrder;
-import com.example.administrador.myapplication.util.CastUtil;
+import com.example.administrador.myapplication.util.AppUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-/**
- * Created by Administrador on 13/05/2015.
- */
 public class ServiceOrderListAdapter extends BaseAdapter {
 
-    List<ServiceOrder> mValues;
     Activity mContext;
+    List<ServiceOrder> mValues;
 
-    public ServiceOrderListAdapter(List<ServiceOrder> values, Activity context) {
+    public ServiceOrderListAdapter(Activity context) {
+        mContext = context;
+    }
+
+    public ServiceOrderListAdapter(Activity context, List<ServiceOrder> values) {
         mValues = values;
         mContext = context;
+    }
+
+    public void setValues(List<ServiceOrder> values) {
+        this.mValues = values;
     }
 
     @Override
@@ -44,19 +48,18 @@ public class ServiceOrderListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = mContext.getLayoutInflater();
-        View serviceOrderView = inflater.inflate(R.layout.service_order_list_item, parent, false);
+        final View serviceOrderView = mContext.getLayoutInflater().inflate(R.layout.service_order_list_item, parent, false);
 
-        ServiceOrder so = getItem(position);
+        final ServiceOrder serviceOrder = getItem(position);
 
-        TextView tx = CastUtil.get(serviceOrderView.findViewById(R.id.textViewDate));
-        tx.setText(new SimpleDateFormat("dd/MM/yyyy").format(so.getDate()));
+        TextView textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewDate));
+        textView.setText(new SimpleDateFormat("dd/MM/yyyy", AppUtil.LOCALE_PT_BR).format(serviceOrder.getDate()));
 
-        tx = CastUtil.get(serviceOrderView.findViewById(R.id.textViewValue));
-        tx.setText(String.valueOf(so.getValue()));
+        textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewValue));
+        textView.setText(String.valueOf(serviceOrder.getValue()));
 
-        tx = CastUtil.get(serviceOrderView.findViewById(R.id.textViewPaid));
-        tx.setText(so.isPaid() ? "Sim" : "Não");
+        textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewPaid));
+        textView.setText(serviceOrder.isPaid() ? mContext.getString(R.string.lbl_yes) : mContext.getString(R.string.lbl_no));
 
         return serviceOrderView;
     }

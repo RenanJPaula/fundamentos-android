@@ -5,9 +5,6 @@ import com.example.administrador.myapplication.models.persistence.ServiceOrdersR
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Administrador on 13/05/2015.
- */
 public class ServiceOrder {
 
     private Integer id;

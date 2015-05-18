@@ -9,19 +9,32 @@ import android.widget.ListView;
 
 import com.example.administrador.myapplication.R;
 import com.example.administrador.myapplication.models.entities.ServiceOrder;
-import com.example.administrador.myapplication.util.CastUtil;
+import com.example.administrador.myapplication.util.AppUtil;
 
 public class ServiceOrderListActivity extends AppCompatActivity {
 
-    private ListView mOrders = null;
+    private ListView mOrders;
+    private ServiceOrderListAdapter mOrdersAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_order_list);
 
-        mOrders = CastUtil.get(findViewById(R.id.listViewServiceOrders));
-        mOrders.setAdapter(new ServiceOrderListAdapter(ServiceOrder.getAll(), this));
+        mOrders = AppUtil.get(findViewById(R.id.listViewServiceOrders));
+
+        mOrdersAdapter = new ServiceOrderListAdapter(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mOrdersAdapter.setValues(ServiceOrder.getAll());
+        if (mOrders.getAdapter() == null) {
+            mOrders.setAdapter(mOrdersAdapter);
+        } else {
+            mOrdersAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override

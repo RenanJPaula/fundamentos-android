@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.administrador.myapplication.R;
-import com.example.administrador.myapplication.util.CastUtil;
+import com.example.administrador.myapplication.util.AppUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText login = CastUtil.get(findViewById(R.id.editTextLogin));
-        final EditText pass = CastUtil.get(findViewById(R.id.editTextPass));
+        final EditText txtLogin = AppUtil.get(findViewById(R.id.editTextLogin));
+        final EditText txtPass = AppUtil.get(findViewById(R.id.editTextPass));
 
-        Button btn = (Button) findViewById(R.id.btn_login);
-        btn.setOnClickListener(new OnClickListener() {
+        final Button btnLogin = (Button) findViewById(R.id.buttonLogin);
+        btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ServiceOrderListActivity.class));

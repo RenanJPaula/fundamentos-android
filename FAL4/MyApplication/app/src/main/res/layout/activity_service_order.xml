@@ -24,13 +24,31 @@
         android:ems="10"
         android:id="@+id/editTextAddress" />
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
         android:inputType="date"
         android:hint="@string/lbl_date"
         android:ems="10"
         android:id="@+id/editTextDate" />
+
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:inputType="time"
+        android:hint="@string/lbl_time"
+        android:ems="10"
+        android:id="@+id/editTextTime" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -5,6 +5,11 @@
     <string name="title_activity_service_order">Service Order</string>
     <string name="title_activity_service_order_list">List of Service Orders</string>
 
+    <string name="msg_mandatory">Mandatory field.</string>
+    <string name="msg_invalid_date">Invalid date.</string>
+    <string name="msg_invalid_time">Invalid time.</string>
+    <string name="msg_invalid_value">Invalid value.</string>
+
     <string name="lbl_user">User</string>
     <string name="lbl_pass">Password</string>
     <string name="lbl_btn_login">Sign In</string>
@@ -17,6 +22,8 @@
     <string name="lbl_paid">Paid?</string>
     <string name="lbl_description">Description</string>
     <string name="lbl_save">Save</string>
-    <string name="lbl_mandatory">Mandatory field</string>
+    <string name="lbl_time">Time</string>
+    <string name="lbl_yes">Yes</string>
+    <string name="lbl_no">No</string>
 
 </resources>
