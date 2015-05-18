@@ -130,38 +130,41 @@ public class ServiceOrder implements Parcelable {
         ServiceOrdersRepository.getInstance().save(this);
     }
 
+
+    @Override
     public int describeContents() {
         return 0;
     }
 
-    public void writeToParcel(Parcel out, int flags) {
-        out.writeInt(mId);
-        out.writeString(mClient == null ? "" : mClient);
-        out.writeString(mAddress == null ? "" : mAddress);
-        out.writeLong(mDate == null ? 0 : mDate.getTime());
-        out.writeDouble(mValue);
-        out.writeByte((byte) (mPaid ? 1 : 0));
-        out.writeString(mDescription == null ? "" : mDescription);
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.mId);
+        dest.writeString(this.mClient);
+        dest.writeString(this.mAddress);
+        dest.writeLong(mDate != null ? mDate.getTime() : -1);
+        dest.writeDouble(this.mValue);
+        dest.writeByte(mPaid ? (byte) 1 : (byte) 0);
+        dest.writeString(this.mDescription);
+    }
+
+    private ServiceOrder(Parcel in) {
+        this.mId = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.mClient = in.readString();
+        this.mAddress = in.readString();
+        long tmpDate = in.readLong();
+        this.mDate = tmpDate == -1 ? null : new Date(tmpDate);
+        this.mValue = in.readDouble();
+        this.mPaid = in.readByte() != 0;
+        this.mDescription = in.readString();
     }
 
     public static final Parcelable.Creator<ServiceOrder> CREATOR = new Parcelable.Creator<ServiceOrder>() {
-        public ServiceOrder createFromParcel(Parcel in) {
-            return new ServiceOrder(in);
+        public ServiceOrder createFromParcel(Parcel source) {
+            return new ServiceOrder(source);
         }
 
         public ServiceOrder[] newArray(int size) {
             return new ServiceOrder[size];
         }
     };
-
-    private ServiceOrder(Parcel in) {
-        mId = in.readInt();
-        mClient = in.readString();
-        mAddress = in.readString();
-        final long dateTime = in.readLong();
-        mDate = dateTime == 0 ? null : new Date(dateTime);
-        mValue = in.readDouble();
-        mPaid = in.readByte() == 1;
-        mDescription = in.readString();
-    }
 }
