@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="title_activity_main">Login</string>
+    <string name="title_activity_service_order">Service Order</string>
+    <string name="title_activity_service_order_list">List of Service Orders</string>
+
+    <string name="lbl_user">User</string>
+    <string name="lbl_pass">Password</string>
+    <string name="lbl_btn_login">Sign In</string>
+    <string name="lbl_service_orders">Service Orders</string>
+    <string name="lbl_add">Add</string>
+    <string name="lbl_client_name">Client Name</string>
+    <string name="lbl_address">Address</string>
+    <string name="lbl_date">Date</string>
+    <string name="lbl_value">Value</string>
+    <string name="lbl_paid">Paid?</string>
+    <string name="lbl_description">Description</string>
+    <string name="lbl_save">Save</string>
+    <string name="lbl_mandatory">Mandatory field</string>
+
+</resources>
