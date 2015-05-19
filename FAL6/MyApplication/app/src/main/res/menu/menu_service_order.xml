@@ -5,7 +5,7 @@
     <item
         android:id="@+id/actionSave"
         android:title="@string/lbl_save"
-        android:icon="@mipmap/ic_save"
+        android:icon="@mipmap/ic_action_save"
         app:showAsAction="always" />
 
 </menu>

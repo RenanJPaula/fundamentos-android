@@ -64,7 +64,7 @@ public class ServiceOrderListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.actionApp:
+            case R.id.actionAdd:
                 final Intent goToAddActivity = new Intent(ServiceOrderListActivity.this, ServiceOrderActivity.class);
                 super.startActivity(goToAddActivity);
                 return true;
