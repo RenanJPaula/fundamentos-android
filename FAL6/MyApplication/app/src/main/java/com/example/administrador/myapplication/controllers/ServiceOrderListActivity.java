@@ -64,9 +64,10 @@ public class ServiceOrderListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            //TODO Implement other actionbar actions
-            default:
-                break;
+            case R.id.actionApp:
+                final Intent goToAddActivity = new Intent(ServiceOrderListActivity.this, ServiceOrderActivity.class);
+                super.startActivity(goToAddActivity);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

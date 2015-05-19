@@ -14,7 +14,7 @@ public final class ServiceOrdersRepository {
     private static Map<Integer, ServiceOrder> sRepository = new LinkedHashMap<>();
 
     static {
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 10; i++) {
             final ServiceOrder serviceOrder = new ServiceOrder();
             serviceOrder.setClient("Mock " + i);
             serviceOrder.setAddress("Address " + i);

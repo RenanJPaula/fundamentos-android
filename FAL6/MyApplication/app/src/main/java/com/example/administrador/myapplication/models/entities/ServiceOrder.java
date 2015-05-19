@@ -112,13 +112,13 @@ public class ServiceOrder implements Parcelable {
     @Override
     public String toString() {
         return "ServiceOrder{" +
-                "mId=" + mId +
-                ", mClient='" + mClient + '\'' +
-                ", mAddress='" + mAddress + '\'' +
-                ", mDate=" + mDate +
-                ", mValue=" + mValue +
-                ", mPaid=" + mPaid +
-                ", mDescription='" + mDescription + '\'' +
+                "id=" + mId +
+                ", client='" + mClient + '\'' +
+                ", address='" + mAddress + '\'' +
+                ", date=" + mDate +
+                ", value=" + mValue +
+                ", paid=" + mPaid +
+                ", description='" + mDescription + '\'' +
                 '}';
     }
 
@@ -129,7 +129,6 @@ public class ServiceOrder implements Parcelable {
     public void save() {
         ServiceOrdersRepository.getInstance().save(this);
     }
-
 
     @Override
     public int describeContents() {
