@@ -2,6 +2,10 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
+    <!-- Custom application theme. -->
+    <style name="AppThemeMaterial" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize the Color Palette: https://developer.android.com/training/material/theme.html -->
         <item name="colorPrimaryDark">@color/material_900</item>
         <item name="colorPrimary">@color/material_600</item>
@@ -16,8 +20,8 @@
         <item name="android:background">@drawable/button_default_background</item>
         <item name="android:textColor">@color/white</item>
         <!-- Buttons: http://www.google.com/design/spec/components/buttons.html#buttons-usage -->
-        <item name="android:minWidth">64dp</item>
-        <item name="android:height">48dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:height">36dp</item>
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:layout_marginRight">4dp</item>
         <item name="android:paddingLeft">8dp</item>
@@ -25,6 +29,11 @@
         <!-- Typography: http://www.google.com/design/spec/style/typography.html#typography-styles -->
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="MyLabelStyle">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>

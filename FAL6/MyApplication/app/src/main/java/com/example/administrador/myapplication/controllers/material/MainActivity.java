@@ -1,8 +1,10 @@
-package com.example.administrador.myapplication.controllers;
+package com.example.administrador.myapplication.controllers.material;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,11 +18,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_material);
 
         final EditText txtLogin = AppUtil.get(findViewById(R.id.editTextLogin));
         final EditText txtPass = AppUtil.get(findViewById(R.id.editTextPass));
         final Button btnLogin = (Button) findViewById(R.id.buttonLogin);
+
+        // Change typeface for the password field
+        txtPass.setTypeface(Typeface.DEFAULT);
+        txtPass.setTransformationMethod(new PasswordTransformationMethod());
 
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override

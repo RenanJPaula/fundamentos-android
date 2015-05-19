@@ -6,24 +6,42 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppThemeMaterial" >
+
+        <!-- Material Activities -->
         <activity
-            android:name="com.example.administrador.myapplication.controllers.MainActivity"
+            android:name=".controllers.material.MainActivity"
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.administrador.myapplication.controllers.ServiceOrderListActivity"
+            android:name=".controllers.material.ServiceOrderListActivity"
+            android:label="@string/title_activity_service_order_list"
+            android:parentActivityName=".controllers.material.MainActivity">
+        </activity>
+        <activity
+            android:name=".controllers.material.ServiceOrderActivity"
+            android:label="@string/title_activity_service_order"
+            android:parentActivityName=".controllers.material.ServiceOrderListActivity">
+        </activity>
+
+        <!-- Default Activities -->
+        <activity
+            android:name=".controllers.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name=".controllers.ServiceOrderListActivity"
             android:label="@string/title_activity_service_order_list" >
         </activity>
         <activity
-            android:name="com.example.administrador.myapplication.controllers.ServiceOrderActivity"
+            android:name=".controllers.ServiceOrderActivity"
             android:label="@string/title_activity_service_order" >
         </activity>
+
     </application>
 
 </manifest>
