@@ -10,35 +10,34 @@ import com.example.administrador.myapplication.R;
 import com.example.administrador.myapplication.models.entities.ServiceOrder;
 import com.example.administrador.myapplication.util.AppUtil;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ServiceOrderListAdapter extends BaseAdapter {
 
     Activity mContext;
-    List<ServiceOrder> mValues;
+    List<ServiceOrder> mItens;
 
     public ServiceOrderListAdapter(Activity context) {
         mContext = context;
     }
 
-    public ServiceOrderListAdapter(Activity context, List<ServiceOrder> values) {
-        mValues = values;
+    public ServiceOrderListAdapter(Activity context, List<ServiceOrder> itens) {
+        mItens = itens;
         mContext = context;
     }
 
-    public void setValues(List<ServiceOrder> values) {
-        this.mValues = values;
+    public void setValues(List<ServiceOrder> itens) {
+        this.mItens = itens;
     }
 
     @Override
     public int getCount() {
-        return mValues.size();
+        return mItens.size();
     }
 
     @Override
     public ServiceOrder getItem(int position) {
-        return mValues.get(position);
+        return mItens.get(position);
     }
 
     @Override
@@ -53,10 +52,10 @@ public class ServiceOrderListAdapter extends BaseAdapter {
         final ServiceOrder serviceOrder = getItem(position);
 
         TextView textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewDate));
-        textView.setText(new SimpleDateFormat("dd/MM/yyyy", AppUtil.LOCALE_PT_BR).format(serviceOrder.getDate()));
+        textView.setText(AppUtil.format(serviceOrder.getDate(), AppUtil.PATTERN_DATE));
 
         textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewValue));
-        textView.setText(String.valueOf(serviceOrder.getValue()));
+        textView.setText(AppUtil.format(serviceOrder.getValue(), AppUtil.PATTERN_NUMBER));
 
         textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewPaid));
         textView.setText(serviceOrder.isPaid() ? mContext.getString(R.string.lbl_yes) : mContext.getString(R.string.lbl_no));

@@ -31,9 +31,4 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="MyLabelStyle">
-        <item name="android:background">@drawable/fab_label_background</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-
 </resources>
