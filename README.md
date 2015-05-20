@@ -8,8 +8,8 @@
   <li><a href="https://docs.google.com/presentation/d/1rxleTkn14Kb1_BKAhU_bDs_Oq4TktySagpYoS3wq0Ho/edit?usp=sharing">Views e ListViews</a></li>
   <li><a href="https://docs.google.com/presentation/d/1jhxxk5BdZnFWAKj7zAFfXUisVKOiaTApE-t1G1cLO7I/edit?usp=sharing">Intent e Intent Filters</a></li>
   <li><a href="https://docs.google.com/presentation/d/1vFP1eZiC914fhkm4dy46Qo--NrP12716afS03vsxVxY/edit?usp=sharing">Themes e Material Design</a></li>
+  <li><a href="">Dialogs e Menus</a></li>
   <li><a href="">Layouts e Views customizadas</a></li>
-  <li><a href="">Dialogs, Menus e WebView</a></li>
   <li><a href="">Processamento assíncrono</a></li>
   <li><a href="">SQLite</a></li>
   <li><a href="">HTTP e REST</a></li>
