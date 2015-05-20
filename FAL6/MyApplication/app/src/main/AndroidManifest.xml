@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrador.myapplication" >
+    package="com.example.administrador.myapplication">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppThemeMaterial" >
+        android:theme="@style/AppThemeMaterial">
 
         <!-- Material Activities -->
         <activity
             android:name=".controllers.material.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,26 +21,29 @@
             android:name=".controllers.material.ServiceOrderListActivity"
             android:label="@string/title_activity_service_order_list"
             android:parentActivityName=".controllers.material.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".controllers.material.MainActivity" />
         </activity>
         <activity
             android:name=".controllers.material.ServiceOrderActivity"
             android:label="@string/title_activity_service_order"
             android:parentActivityName=".controllers.material.ServiceOrderListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".controllers.material.MainActivity" />
         </activity>
 
         <!-- Default Activities -->
         <activity
             android:name=".controllers.MainActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:label="@string/title_activity_main"/>
         <activity
             android:name=".controllers.ServiceOrderListActivity"
-            android:label="@string/title_activity_service_order_list" >
-        </activity>
+            android:label="@string/title_activity_service_order_list"/>
         <activity
             android:name=".controllers.ServiceOrderActivity"
-            android:label="@string/title_activity_service_order" >
-        </activity>
+            android:label="@string/title_activity_service_order"/>
 
     </application>
 

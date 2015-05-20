@@ -11,10 +11,10 @@ public final class AppUtil {
 
     public static final Locale LOCALE_PT_BR = new Locale("pt", "BR");
 
-    public static final String PATTERN_DATE = "dd/MM/yyyy";
-    public static final String PATTERN_TIME = "HH:mm:ss";
-    public static final String PATTERN_DATETIME = "dd/MM/yyyy HH:mm:ss";
-    public static final String PATTERN_NUMBER = "#.00";
+    private static final String PATTERN_DATE = "dd/MM/yyyy";
+    private static final String PATTERN_TIME = "HH:mm:ss";
+    private static final String PATTERN_DATETIME = "dd/MM/yyyy HH:mm:ss";
+    private static final String PATTERN_NUMBER = "#.00";
 
     private AppUtil() {
         super();
@@ -24,13 +24,25 @@ public final class AppUtil {
         return (T) element;
     }
 
-    public static String format(Number number, String pattern) {
+    public static String formatDate(Date date) {
+        return format(date, AppUtil.PATTERN_DATE);
+    }
+
+    public static String formatDateTime(Date date) {
+        return format(date, AppUtil.PATTERN_DATETIME);
+    }
+
+    public static String formatTime(Date date) {
+        return format(date, AppUtil.PATTERN_TIME);
+    }
+
+    public static String formatDecimal(Number number) {
         final DecimalFormat decimalFormat = AppUtil.get(NumberFormat.getNumberInstance(Locale.US));
-        decimalFormat.applyPattern(pattern);
+        decimalFormat.applyPattern(AppUtil.PATTERN_NUMBER);
         return decimalFormat.format(number);
     }
 
-    public static String format(Date date, String pattern) {
+    private static String format(Date date, String pattern) {
         final DateFormat dateTimeFormat = new SimpleDateFormat(pattern, AppUtil.LOCALE_PT_BR);
         return dateTimeFormat.format(date);
     }

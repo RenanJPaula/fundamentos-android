@@ -50,9 +50,9 @@ public class ServiceOrderActivity extends AppCompatActivity {
 
             mEditTextClientName.setText(mServiceOrder.getClient());
             mEditTextAddress.setText(mServiceOrder.getAddress());
-            mEditTextDate.setText(AppUtil.format(mServiceOrder.getDate(), AppUtil.PATTERN_DATE));
-            mEditTextTime.setText(AppUtil.format(mServiceOrder.getDate(), AppUtil.PATTERN_TIME));
-            mEditTextValue.setText(AppUtil.format(mServiceOrder.getValue(), AppUtil.PATTERN_NUMBER));
+            mEditTextDate.setText(AppUtil.formatDate(mServiceOrder.getDate()));
+            mEditTextTime.setText(AppUtil.formatTime(mServiceOrder.getDate()));
+            mEditTextValue.setText(AppUtil.formatDecimal(mServiceOrder.getValue()));
             mSwitchPaid.setChecked(mServiceOrder.isPaid());
             mEditTextDescription.setText(mServiceOrder.getDescription());
         }
@@ -160,7 +160,7 @@ public class ServiceOrderActivity extends AppCompatActivity {
     private boolean verifyServiceOrderValue() {
         final String valueText = mEditTextValue.getText().toString().trim();
         if (!TextUtils.isEmpty(valueText)) {
-            final Pattern pattern = Pattern.compile("[0-9]+([.][0-9]{1,2})?");
+            final Pattern pattern = Pattern.compile("[0-9]+([.][0-9]{2})");
             if (!pattern.matcher(valueText).matches()) {
                 mEditTextValue.setError(super.getString(R.string.msg_invalid_value));
                 return false;

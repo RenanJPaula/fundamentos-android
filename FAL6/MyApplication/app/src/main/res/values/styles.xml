@@ -10,18 +10,17 @@
         <item name="colorPrimaryDark">@color/material_900</item>
         <item name="colorPrimary">@color/material_600</item>
         <item name="colorAccent">@color/material_600</item>
-        <item name="android:navigationBarColor" tools:ignore="NewApi">@color/black_50_transparent</item>
         <!-- Change default button style -->
-        <item name="android:buttonStyle">@style/MyButtonStyle</item>
+        <item name="android:buttonStyle">@style/MyButton</item>
     </style>
 
-    <style name="MyButtonStyle" parent="@android:style/Widget.Button">
+    <style name="MyButton" parent="@android:style/Widget.Button">
         <!-- Colors: http://www.google.com/design/spec/style/color.html#color-color-palette -->
         <item name="android:background">@drawable/button_default_background</item>
         <item name="android:textColor">@color/white</item>
         <!-- Buttons: http://www.google.com/design/spec/components/buttons.html#buttons-usage -->
         <item name="android:minWidth">88dp</item>
-        <item name="android:height">36dp</item>
+        <item name="android:height">48dp</item>
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:layout_marginRight">4dp</item>
         <item name="android:paddingLeft">8dp</item>

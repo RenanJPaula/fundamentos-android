@@ -15,12 +15,9 @@ import com.example.administrador.myapplication.models.entities.ServiceOrder;
 import com.example.administrador.myapplication.util.AppUtil;
 
 import java.text.DateFormat;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class ServiceOrderActivity extends AppCompatActivity {
@@ -53,13 +50,9 @@ public class ServiceOrderActivity extends AppCompatActivity {
 
             mEditTextClientName.setText(mServiceOrder.getClient());
             mEditTextAddress.setText(mServiceOrder.getAddress());
-            final DateFormat dateTimeFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", AppUtil.LOCALE_PT_BR);
-            final String[] dateTimeText = dateTimeFormat.format(mServiceOrder.getDate()).split("[ ]");
-            mEditTextDate.setText(dateTimeText[0]);
-            mEditTextTime.setText(dateTimeText[1]);
-            final DecimalFormat decimalFormat = AppUtil.get(NumberFormat.getNumberInstance(Locale.US));
-            decimalFormat.applyPattern("#.00");
-            mEditTextValue.setText(decimalFormat.format(mServiceOrder.getValue()));
+            mEditTextDate.setText(AppUtil.formatDate(mServiceOrder.getDate()));
+            mEditTextTime.setText(AppUtil.formatTime(mServiceOrder.getDate()));
+            mEditTextValue.setText(AppUtil.formatDecimal(mServiceOrder.getValue()));
             mSwitchPaid.setChecked(mServiceOrder.isPaid());
             mEditTextDescription.setText(mServiceOrder.getDescription());
         }
@@ -167,7 +160,7 @@ public class ServiceOrderActivity extends AppCompatActivity {
     private boolean verifyServiceOrderValue() {
         final String valueText = mEditTextValue.getText().toString().trim();
         if (!TextUtils.isEmpty(valueText)) {
-            final Pattern pattern = Pattern.compile("[0-9]+([.][0-9]{1,2})?");
+            final Pattern pattern = Pattern.compile("[0-9]+([.][0-9]{2})");
             if (!pattern.matcher(valueText).matches()) {
                 mEditTextValue.setError(super.getString(R.string.msg_invalid_value));
                 return false;

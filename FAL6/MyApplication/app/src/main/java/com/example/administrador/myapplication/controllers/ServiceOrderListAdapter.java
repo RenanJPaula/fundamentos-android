@@ -52,10 +52,10 @@ public class ServiceOrderListAdapter extends BaseAdapter {
         final ServiceOrder serviceOrder = getItem(position);
 
         TextView textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewDate));
-        textView.setText(AppUtil.format(serviceOrder.getDate(), AppUtil.PATTERN_DATE));
+        textView.setText(AppUtil.formatDate(serviceOrder.getDate()));
 
         textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewValue));
-        textView.setText(AppUtil.format(serviceOrder.getValue(), AppUtil.PATTERN_NUMBER));
+        textView.setText(AppUtil.formatDecimal(serviceOrder.getValue()));
 
         textView = AppUtil.get(serviceOrderView.findViewById(R.id.textViewPaid));
         textView.setText(serviceOrder.isPaid() ? mContext.getString(R.string.lbl_yes) : mContext.getString(R.string.lbl_no));
