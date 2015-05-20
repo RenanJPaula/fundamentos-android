@@ -11,6 +11,7 @@
     <color name="material_100">#B2DFDB</color>
     <color name="material_50">#E0F2F1</color>
 
+    <color name="gray">#e4e4e4</color>
     <color name="white">#FFFFFF</color>
     <!-- Transparency: http://stackoverflow.com/questions/1492554/set-transparent-background-of-an-imageview-in-android -->
     <color name="black">#000000</color>

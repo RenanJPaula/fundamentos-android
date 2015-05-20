@@ -10,6 +10,7 @@
         <item name="colorPrimaryDark">@color/material_900</item>
         <item name="colorPrimary">@color/material_600</item>
         <item name="colorAccent">@color/material_600</item>
+        <item name="android:windowBackground">@color/gray</item>
         <!-- Change default button style -->
         <item name="android:buttonStyle">@style/MyButton</item>
     </style>

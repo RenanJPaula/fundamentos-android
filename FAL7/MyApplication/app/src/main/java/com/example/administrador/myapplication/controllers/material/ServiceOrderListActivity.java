@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.view.ContextMenu;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.administrador.myapplication.R;
@@ -16,13 +15,14 @@ import com.example.administrador.myapplication.models.entities.ServiceOrder;
 import com.example.administrador.myapplication.util.AppUtil;
 import com.melnykov.fab.FloatingActionButton;
 
+import java.util.List;
+
 public class ServiceOrderListActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE_ADD = 1;
     public static final int REQUEST_CODE_EDIT = 2;
-    private ListView mServiceOrders;
+    private RecyclerView mServiceOrders;
     private ServiceOrderListAdapter mServiceOrdersAdapter;
-    private int mServiceOrderIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +32,13 @@ public class ServiceOrderListActivity extends AppCompatActivity {
         this.bindElements();
 
         super.registerForContextMenu(mServiceOrders);
-
-        mServiceOrdersAdapter = new ServiceOrderListAdapter(this);
     }
 
     private void bindElements() {
-        mServiceOrders = AppUtil.get(findViewById(R.id.listViewServiceOrders));
-        mServiceOrders.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                mServiceOrderIndex = position;
-                return false;
-            }
-        });
+        mServiceOrders = AppUtil.get(findViewById(R.id.recyclerViewServiceOrders));
+        mServiceOrders.setHasFixedSize(true);
+        mServiceOrders.setLayoutManager(new LinearLayoutManager(this));
+
         final FloatingActionButton fabAdd = AppUtil.get(findViewById(R.id.fabAdd));
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,18 +52,14 @@ public class ServiceOrderListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mServiceOrdersAdapter.setValues(ServiceOrder.getAll());
-        if (mServiceOrders.getAdapter() == null) {
+        final List<ServiceOrder> serviceOrders = ServiceOrder.getAll();
+        if (mServiceOrdersAdapter == null) {
+            mServiceOrdersAdapter = new ServiceOrderListAdapter(serviceOrders);
             mServiceOrders.setAdapter(mServiceOrdersAdapter);
         } else {
+            mServiceOrdersAdapter.setItens(serviceOrders);
             mServiceOrdersAdapter.notifyDataSetChanged();
         }
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        this.getMenuInflater().inflate(R.menu.menu_service_order_list_context, menu);
-        super.onCreateContextMenu(menu, v, menuInfo);
     }
 
     @Override
@@ -77,7 +67,7 @@ public class ServiceOrderListActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.actionEdit:
                 final Intent goToEditActivity = new Intent(ServiceOrderListActivity.this, ServiceOrderActivity.class);
-                final ServiceOrder serviceOrder = mServiceOrdersAdapter.getItem(mServiceOrderIndex);
+                final ServiceOrder serviceOrder = mServiceOrdersAdapter.getLongClickItem();
                 goToEditActivity.putExtra(ServiceOrderActivity.EXTRA_SERVICE_ORDER, serviceOrder);
                 goToEditActivity.putExtra(ServiceOrderActivity.EXTRA_START_BENCHMARK, SystemClock.elapsedRealtime());
                 super.startActivityForResult(goToEditActivity, REQUEST_CODE_EDIT);

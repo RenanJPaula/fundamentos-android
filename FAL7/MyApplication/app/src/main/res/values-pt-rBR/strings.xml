@@ -29,5 +29,6 @@
     <string name="lbl_yes">Sim</string>
     <string name="lbl_no">Não</string>
     <string name="lbl_edit">Editar</string>
+    <string name="lbl_options">Opções</string>
 
 </resources>

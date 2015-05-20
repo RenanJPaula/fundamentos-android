@@ -15,6 +15,8 @@ import com.example.administrador.myapplication.R;
 import com.example.administrador.myapplication.models.entities.ServiceOrder;
 import com.example.administrador.myapplication.util.AppUtil;
 
+import java.util.List;
+
 public class ServiceOrderListActivity extends AppCompatActivity {
 
     private ListView mServiceOrders;
@@ -29,8 +31,6 @@ public class ServiceOrderListActivity extends AppCompatActivity {
         this.bindElements();
 
         super.registerForContextMenu(mServiceOrders);
-
-        mServiceOrdersAdapter = new ServiceOrderListAdapter(this);
     }
 
     private void bindElements() {
@@ -47,10 +47,12 @@ public class ServiceOrderListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mServiceOrdersAdapter.setValues(ServiceOrder.getAll());
-        if (mServiceOrders.getAdapter() == null) {
+        final List<ServiceOrder> serviceOrders = ServiceOrder.getAll();
+        if (mServiceOrdersAdapter == null) {
+            mServiceOrdersAdapter = new ServiceOrderListAdapter(this, serviceOrders);
             mServiceOrders.setAdapter(mServiceOrdersAdapter);
         } else {
+            mServiceOrdersAdapter.setItens(serviceOrders);
             mServiceOrdersAdapter.notifyDataSetChanged();
         }
     }

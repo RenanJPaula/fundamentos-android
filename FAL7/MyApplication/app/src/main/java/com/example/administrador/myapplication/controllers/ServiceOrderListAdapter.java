@@ -14,19 +14,15 @@ import java.util.List;
 
 public class ServiceOrderListAdapter extends BaseAdapter {
 
-    Activity mContext;
-    List<ServiceOrder> mItens;
-
-    public ServiceOrderListAdapter(Activity context) {
-        mContext = context;
-    }
+    private Activity mContext;
+    private List<ServiceOrder> mItens;
 
     public ServiceOrderListAdapter(Activity context, List<ServiceOrder> itens) {
         mItens = itens;
         mContext = context;
     }
 
-    public void setValues(List<ServiceOrder> itens) {
+    public void setItens(List<ServiceOrder> itens) {
         this.mItens = itens;
     }
 

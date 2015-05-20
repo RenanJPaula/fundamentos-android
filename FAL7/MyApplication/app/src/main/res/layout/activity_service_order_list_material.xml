@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/listViewServiceOrders"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewServiceOrders"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </ListView>
+    </android.support.v7.widget.RecyclerView>
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fabAdd"
