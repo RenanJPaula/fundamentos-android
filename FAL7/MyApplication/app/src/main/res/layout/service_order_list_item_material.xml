@@ -34,14 +34,19 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textViewDate"
+                    android:id="@+id/textViewClient"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableLeft="@mipmap/ic_label_client"/>
 
                 <TextView
-                    android:id="@+id/textViewPaid"
+                    android:id="@+id/textViewDate"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableLeft="@mipmap/ic_label_data"/>
+
 
             </LinearLayout>
         </LinearLayout>

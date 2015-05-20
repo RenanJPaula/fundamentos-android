@@ -47,8 +47,8 @@ public class ServiceOrderListAdapter extends RecyclerView.Adapter<ServiceOrderLi
         final Context context = holder.mTxtDate.getContext();
         final ServiceOrder serviceOrder = mItens.get(position);
         holder.mTxtDate.setText(AppUtil.formatDate(serviceOrder.getDate()));
+        holder.mTxtClient.setText(serviceOrder.getClient());
         holder.mTxtValue.setText(AppUtil.formatDecimal(serviceOrder.getValue()));
-        holder.mTxtPaid.setText(serviceOrder.isPaid() ? context.getString(R.string.lbl_yes) : context.getString(R.string.lbl_no));
         /** Context Menu */
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -75,14 +75,15 @@ public class ServiceOrderListAdapter extends RecyclerView.Adapter<ServiceOrderLi
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
         public TextView mTxtValue;
+        public TextView mTxtClient;
         public TextView mTxtDate;
-        public TextView mTxtPaid;
 
         public ViewHolder(View view) {
             super(view);
             mTxtValue = AppUtil.get(view.findViewById(R.id.textViewValue));
+            mTxtClient = AppUtil.get(view.findViewById(R.id.textViewClient));
             mTxtDate = AppUtil.get(view.findViewById(R.id.textViewDate));
-            mTxtPaid = AppUtil.get(view.findViewById(R.id.textViewPaid));
+
             /** Context Menu */
             view.setOnCreateContextMenuListener(this);
         }
