@@ -124,16 +124,16 @@ public class ServiceOrder implements Parcelable {
 
     @Override
     public String toString() {
-        return "serviceOrder: {" +
-                "id:" + mId +
-                ", client:'" + mClient + '\'' +
-                ", phone:'" + mPhone + '\'' +
-                ", address:'" + mAddress + '\'' +
-                ", date:" + mDate +
-                ", value:" + mValue +
-                ", paid:" + mPaid +
-                ", description:'" + mDescription + '\'' +
-                '}';
+        return "{ serviceOrder: {" +
+                "\"id\":" + mId +
+                ", \"client\": \"" + mClient + '\"' +
+                ", \"phone\": \"" + mPhone + '\"' +
+                ", \"address\": \"" + mAddress + '\"' +
+                ", \"date\":" + (mDate == null ? 0 : mDate.getTime()) +
+                ", \"value\":" + mValue +
+                ", \"paid\":" + mPaid +
+                ", \"description\": \"" + mDescription + '\"' +
+                "}}";
     }
 
     public static List<ServiceOrder> getAll() {
