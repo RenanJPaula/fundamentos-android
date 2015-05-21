@@ -31,5 +31,6 @@
     <string name="lbl_edit">Editar</string>
     <string name="lbl_delete">Excluir</string>
     <string name="lbl_options">Opções</string>
+    <string name="lbl_client_phone">Telefone</string>
 
 </resources>

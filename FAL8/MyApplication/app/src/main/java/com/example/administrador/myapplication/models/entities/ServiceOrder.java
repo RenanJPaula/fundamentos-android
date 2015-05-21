@@ -12,6 +12,7 @@ public class ServiceOrder implements Parcelable {
 
     private Integer mId;
     private String mClient;
+    private String mPhone;
     private String mAddress;
     private Date mDate;
     private double mValue;
@@ -36,6 +37,14 @@ public class ServiceOrder implements Parcelable {
 
     public void setClient(String client) {
         this.mClient = client;
+    }
+
+    public String getPhone() {
+        return mPhone;
+    }
+
+    public void setPhone(String phone) {
+        this.mPhone = phone;
     }
 
     public String getAddress() {
@@ -89,9 +98,12 @@ public class ServiceOrder implements Parcelable {
         if (mPaid != that.mPaid) return false;
         if (mId != null ? !mId.equals(that.mId) : that.mId != null) return false;
         if (mClient != null ? !mClient.equals(that.mClient) : that.mClient != null) return false;
-        if (mAddress != null ? !mAddress.equals(that.mAddress) : that.mAddress != null) return false;
+        if (mPhone != null ? !mPhone.equals(that.mPhone) : that.mPhone != null) return false;
+        if (mAddress != null ? !mAddress.equals(that.mAddress) : that.mAddress != null)
+            return false;
         if (mDate != null ? !mDate.equals(that.mDate) : that.mDate != null) return false;
         return !(mDescription != null ? !mDescription.equals(that.mDescription) : that.mDescription != null);
+
     }
 
     @Override
@@ -100,6 +112,7 @@ public class ServiceOrder implements Parcelable {
         long temp;
         result = mId != null ? mId.hashCode() : 0;
         result = 31 * result + (mClient != null ? mClient.hashCode() : 0);
+        result = 31 * result + (mPhone != null ? mPhone.hashCode() : 0);
         result = 31 * result + (mAddress != null ? mAddress.hashCode() : 0);
         result = 31 * result + (mDate != null ? mDate.hashCode() : 0);
         temp = Double.doubleToLongBits(mValue);
@@ -114,6 +127,7 @@ public class ServiceOrder implements Parcelable {
         return "ServiceOrder{" +
                 "id=" + mId +
                 ", client='" + mClient + '\'' +
+                ", phone='" + mPhone + '\'' +
                 ", address='" + mAddress + '\'' +
                 ", date=" + mDate +
                 ", value=" + mValue +
@@ -139,6 +153,7 @@ public class ServiceOrder implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.mId);
         dest.writeString(this.mClient);
+        dest.writeString(this.mPhone);
         dest.writeString(this.mAddress);
         dest.writeLong(mDate != null ? mDate.getTime() : -1);
         dest.writeDouble(this.mValue);
@@ -149,6 +164,7 @@ public class ServiceOrder implements Parcelable {
     private ServiceOrder(Parcel in) {
         this.mId = (Integer) in.readValue(Integer.class.getClassLoader());
         this.mClient = in.readString();
+        this.mPhone = in.readString();
         this.mAddress = in.readString();
         long tmpDate = in.readLong();
         this.mDate = tmpDate == -1 ? null : new Date(tmpDate);
