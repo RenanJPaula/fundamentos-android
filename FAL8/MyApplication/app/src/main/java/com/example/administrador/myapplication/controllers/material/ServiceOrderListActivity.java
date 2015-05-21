@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ import com.example.administrador.myapplication.R;
 import com.example.administrador.myapplication.models.entities.ServiceOrder;
 import com.example.administrador.myapplication.util.AppUtil;
 import com.melnykov.fab.FloatingActionButton;
+
+import org.apache.http.protocol.HTTP;
 
 import java.util.List;
 
@@ -114,5 +117,35 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
             default:
                 return false;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        this.getMenuInflater().inflate(R.menu.menu_service_order_list_actionbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /**
+     * @see <a href="http://developer.android.com/guide/components/intents-filters.html">Forcing an app chooser</a>
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.actionShare:
+                // Create the text message with a string
+                final Intent sendIntent = new Intent(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, ServiceOrder.getAll().toString());
+                sendIntent.setType(HTTP.PLAIN_TEXT_TYPE);
+
+                // Create intent to show the chooser dialog
+                final Intent chooser = Intent.createChooser(sendIntent, getString(R.string.lbl_share_option));
+
+                // Verify the original intent will resolve to at least one activity
+                if (sendIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(chooser);
+                }
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

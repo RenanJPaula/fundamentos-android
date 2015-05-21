@@ -124,7 +124,7 @@ public class ServiceOrder implements Parcelable {
 
     @Override
     public String toString() {
-        return "{ serviceOrder: {" +
+        return "{" +
                 "\"id\":" + mId +
                 ", \"client\": \"" + mClient + '\"' +
                 ", \"phone\": \"" + mPhone + '\"' +
@@ -133,7 +133,7 @@ public class ServiceOrder implements Parcelable {
                 ", \"value\":" + mValue +
                 ", \"paid\":" + mPaid +
                 ", \"description\": \"" + mDescription + '\"' +
-                "}}";
+                "}";
     }
 
     public static List<ServiceOrder> getAll() {

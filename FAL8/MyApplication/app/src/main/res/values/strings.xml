@@ -35,5 +35,7 @@
     <string name="lbl_client_phone">Phone</string>
     <string name="lbl_call">Call</string>
     <string name="lbl_confirm">Confirm</string>
+    <string name="lbl_share">Share</string>
+    <string name="lbl_share_option">Choose one option</string>
 
 </resources>

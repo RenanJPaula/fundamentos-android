@@ -18,7 +18,7 @@ public final class ServiceOrdersRepository {
             final ServiceOrder serviceOrder = new ServiceOrder();
             serviceOrder.setClient("Person Name " + i);
             serviceOrder.setAddress("Address " + i);
-            serviceOrder.setPhone("99999999 " + i);
+            serviceOrder.setPhone("99999999" + i);
             serviceOrder.setDate(new Date());
             serviceOrder.setValue(10.00D * (i + 1));
             serviceOrder.setPaid(i % 2 == 0);
