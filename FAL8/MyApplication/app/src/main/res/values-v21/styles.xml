@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppThemeMaterial" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize the Color Palette: https://developer.android.com/training/material/theme.html -->
+        <item name="colorPrimaryDark">@color/material_900</item>
+        <item name="colorPrimary">@color/material_600</item>
+        <item name="colorAccent">@color/material_600</item>
+        <item name="android:navigationBarColor">@color/black_100_opaque</item>
+        <!-- Change default button style -->
+        <item name="android:buttonStyle">@style/MyButton</item>
+    </style>
+</resources>

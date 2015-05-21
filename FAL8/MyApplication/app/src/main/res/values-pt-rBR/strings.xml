@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meu App</string>
+
+    <string name="title_activity_main">Login</string>
+    <string name="title_activity_service_order">Ordem de Serviço</string>
+    <string name="title_activity_service_order_list">Lista de Ordens de Serviço</string>
+
+    <string name="msg_mandatory">Campo obrigatório.</string>
+    <string name="msg_invalid_date">Data inválida.</string>
+    <string name="msg_invalid_time">Hora inválida.</string>
+    <string name="msg_invalid_value">Valor inválido.</string>
+    <string name="msg_add_success">Ordem de servico adicionada com sucesso.</string>
+    <string name="msg_edit_success">Ordem de servico editada com sucesso.</string>
+
+    <string name="lbl_user">Usuário</string>
+    <string name="lbl_pass">Senha</string>
+    <string name="lbl_btn_login">Entrar</string>
+    <string name="lbl_service_orders">Ordens de Serviço</string>
+    <string name="lbl_add">Adicionar</string>
+    <string name="lbl_client_name">Nome do Cliente</string>
+    <string name="lbl_address">Endereço</string>
+    <string name="lbl_date">Data</string>
+    <string name="lbl_value">Valor</string>
+    <string name="lbl_paid">Pago?</string>
+    <string name="lbl_description">Descrição</string>
+    <string name="lbl_save">Salvar</string>
+    <string name="lbl_time">Hora</string>
+    <string name="lbl_yes">Sim</string>
+    <string name="lbl_no">Não</string>
+    <string name="lbl_edit">Editar</string>
+    <string name="lbl_delete">Excluir</string>
+    <string name="lbl_options">Opções</string>
+
+</resources>
