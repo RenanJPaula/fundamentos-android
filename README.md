@@ -8,9 +8,9 @@
   <li><a href="https://docs.google.com/presentation/d/1rxleTkn14Kb1_BKAhU_bDs_Oq4TktySagpYoS3wq0Ho/edit?usp=sharing">Views e ListViews</a></li>
   <li><a href="https://docs.google.com/presentation/d/1jhxxk5BdZnFWAKj7zAFfXUisVKOiaTApE-t1G1cLO7I/edit?usp=sharing">Intent e Intent Filters</a></li>
   <li><a href="https://docs.google.com/presentation/d/1vFP1eZiC914fhkm4dy46Qo--NrP12716afS03vsxVxY/edit?usp=sharing">Themes e Material Design</a></li>
-  <li><a href="https://docs.google.com/presentation/d/1plers7rDw_gaJFGkH9_FEicVAzt7unUgyVwsY74sN50/edit?usp=sharing">Layouts e Views customizadas</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1plers7rDw_gaJFGkH9_FEicVAzt7unUgyVwsY74sN50/edit?usp=sharing">Layouts e Views Customizadas</a></li>
   <li><a href="https://docs.google.com/presentation/d/1K70IxZp87Yb8tVzgUjliOOORby4RDsI3sJs0O3EZCYE/edit?usp=sharing">Dialogs e Menus</a></li>
-  <li><a href="">Processamento assíncrono</a></li>
+  <li><a href="">Processamento Assíncrono</a></li>
   <li><a href="">SQLite</a></li>
   <li><a href="">HTTP e REST</a></li>
   <li><a href="">Android Notifications</a></li>
