@@ -11,6 +11,8 @@
     <string name="msg_invalid_value">Invalid value.</string>
     <string name="msg_add_success">Service order added successfully.</string>
     <string name="msg_edit_success">Service order edited successfully.</string>
+    <string name="msg_delete">Delete the selected service order?</string>
+    <string name="msg_delete_success">Service order deleted successfully.</string>
 
     <string name="lbl_user">User</string>
     <string name="lbl_pass">Password</string>
@@ -31,5 +33,7 @@
     <string name="lbl_delete">Delete</string>
     <string name="lbl_options">Options</string>
     <string name="lbl_client_phone">Phone</string>
+    <string name="lbl_call">Call</string>
+    <string name="lbl_confirm">Confirm</string>
 
 </resources>

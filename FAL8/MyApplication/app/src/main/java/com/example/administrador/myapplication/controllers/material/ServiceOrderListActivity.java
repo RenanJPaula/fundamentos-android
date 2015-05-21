@@ -1,8 +1,11 @@
 package com.example.administrador.myapplication.controllers.material;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -51,6 +54,10 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
     @Override
     protected void onResume() {
         super.onResume();
+        this.updateAdapterItens();
+    }
+
+    private void updateAdapterItens() {
         final List<ServiceOrder> serviceOrders = ServiceOrder.getAll();
         if (mServiceOrdersAdapter == null) {
             mServiceOrdersAdapter = new ServiceOrderListAdapter(serviceOrders);
@@ -65,9 +72,9 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_CODE_ADD) {
-                Toast.makeText(this, getString(R.string.msg_add_success), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.msg_add_success, Toast.LENGTH_LONG).show();
             } else if (requestCode == REQUEST_CODE_EDIT) {
-                Toast.makeText(this, getString(R.string.msg_edit_success), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.msg_edit_success, Toast.LENGTH_LONG).show();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -75,16 +82,34 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+        final ServiceOrder serviceOrder = mServiceOrdersAdapter.getSelectedItem();
         switch (item.getItemId()) {
             case R.id.actionEdit:
                 final Intent goToEditActivity = new Intent(ServiceOrderListActivity.this, ServiceOrderActivity.class);
-                final ServiceOrder serviceOrder = mServiceOrdersAdapter.getSelectedItem();
                 goToEditActivity.putExtra(ServiceOrderActivity.EXTRA_SERVICE_ORDER, serviceOrder);
                 goToEditActivity.putExtra(ServiceOrderActivity.EXTRA_START_BENCHMARK, SystemClock.elapsedRealtime());
                 super.startActivityForResult(goToEditActivity, REQUEST_CODE_EDIT);
                 return true;
             case R.id.actionDelete:
-                //TODO
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.lbl_confirm)
+                        .setMessage(R.string.msg_delete)
+                        .setPositiveButton(R.string.lbl_yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                serviceOrder.delete();
+                                Toast.makeText(ServiceOrderListActivity.this, R.string.msg_delete_success, Toast.LENGTH_LONG).show();
+                                updateAdapterItens();
+                            }
+                        })
+                        .setNeutralButton(R.string.lbl_no, null)
+                        .create().show();
+                return true;
+            case R.id.actionCall:
+                // Best Practices: http://stackoverflow.com/questions/4275678/how-to-make-phone-call-using-intent-in-android
+                final Intent goToSOPhoneCall = new Intent(Intent.ACTION_DIAL);
+                goToSOPhoneCall.setData(Uri.parse("tel:" + serviceOrder.getPhone()));
+                startActivity(goToSOPhoneCall);
                 return true;
             default:
                 return false;

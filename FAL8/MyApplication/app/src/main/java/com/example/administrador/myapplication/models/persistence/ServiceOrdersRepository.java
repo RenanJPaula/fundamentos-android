@@ -16,8 +16,9 @@ public final class ServiceOrdersRepository {
     static {
         for (int i = 0; i < 10; i++) {
             final ServiceOrder serviceOrder = new ServiceOrder();
-            serviceOrder.setClient("Mock " + i);
+            serviceOrder.setClient("Person Name " + i);
             serviceOrder.setAddress("Address " + i);
+            serviceOrder.setPhone("99999999 " + i);
             serviceOrder.setDate(new Date());
             serviceOrder.setValue(10.00D * (i + 1));
             serviceOrder.setPaid(i % 2 == 0);
@@ -43,6 +44,10 @@ public final class ServiceOrdersRepository {
             serviceOrder.setId(sSequence++);
         }
         sRepository.put(serviceOrder.getId(), serviceOrder);
+    }
+
+    public void delete(ServiceOrder serviceOrder) {
+        sRepository.remove(serviceOrder.getId());
     }
 
     public List<ServiceOrder> getAll() {
