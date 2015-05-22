@@ -116,7 +116,7 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
                 return true;
             case R.id.actionCall:
                 // Best Practices: http://stackoverflow.com/questions/4275678/how-to-make-phone-call-using-intent-in-android
-                final Intent goToSOPhoneCall = new Intent(Intent.ACTION_DIAL);
+                final Intent goToSOPhoneCall = new Intent(Intent.ACTION_CALL /* or Intent.ACTION_DIAL (no manifest permission needed) */);
                 goToSOPhoneCall.setData(Uri.parse("tel:" + serviceOrder.getPhone()));
                 startActivity(goToSOPhoneCall);
                 return true;

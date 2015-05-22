@@ -9,69 +9,99 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.administrador.myapplication.controllers.ServiceOrderActivity">
 
-    <EditText
-        android:id="@+id/editTextClientName"
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/lbl_client_name"
-        android:inputType="textPersonName" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editTextClientPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/lbl_client_phone"
-        android:inputType="phone" />
+        <EditText
+            android:id="@+id/editTextClientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lbl_client_name"
+            android:inputType="textPersonName" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
-    <EditText
-        android:id="@+id/editTextAddress"
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/lbl_address"
-        android:inputType="textPostalAddress" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextClientPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lbl_client_phone"
+            android:inputType="phone" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lbl_address"
+            android:inputType="textPostalAddress" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextDate"
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:ems="10"
-            android:hint="@string/lbl_date"
-            android:inputType="date" />
+            android:layout_weight="5">
 
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lbl_date"
+                android:inputType="date" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
-        <EditText
-            android:id="@+id/editTextTime"
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:ems="10"
-            android:hint="@string/lbl_time"
-            android:inputType="time" />
+            android:layout_weight="5">
+
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lbl_time"
+                android:inputType="time" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextValue"
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/lbl_value"
-            android:inputType="numberDecimal" />
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/editTextValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lbl_value"
+                android:inputType="numberDecimal" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
         <Switch
             android:id="@+id/switchPaid"
@@ -81,12 +111,17 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextDescription"
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/lbl_description"
-        android:inputType="textMultiLine"
-        android:lines="3" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lbl_description"
+            android:inputType="textMultiLine"
+            android:lines="3" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 </LinearLayout>
