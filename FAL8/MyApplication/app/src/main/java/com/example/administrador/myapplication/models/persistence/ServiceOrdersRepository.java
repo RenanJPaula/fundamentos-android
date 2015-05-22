@@ -13,8 +13,10 @@ public final class ServiceOrdersRepository {
     private static Integer sSequence = 0;
     private static Map<Integer, ServiceOrder> sRepository = new LinkedHashMap<>();
 
+    public static final int MOCK_ENTITY_NUMBER = 0;
+
     static {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < MOCK_ENTITY_NUMBER; i++) {
             final ServiceOrder serviceOrder = new ServiceOrder();
             serviceOrder.setClient("Person Name " + i);
             serviceOrder.setAddress("Address " + i);

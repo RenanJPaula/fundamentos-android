@@ -57,10 +57,10 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
     @Override
     protected void onResume() {
         super.onResume();
-        this.updateAdapterItens();
+        this.updateRecyclerItens();
     }
 
-    private void updateAdapterItens() {
+    private void updateRecyclerItens() {
         final List<ServiceOrder> serviceOrders = ServiceOrder.getAll();
         if (mServiceOrdersAdapter == null) {
             mServiceOrdersAdapter = new ServiceOrderListAdapter(serviceOrders);
@@ -76,6 +76,8 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_CODE_ADD) {
                 Toast.makeText(this, R.string.msg_add_success, Toast.LENGTH_LONG).show();
+                // Force onPrepareOptionsMenu call
+                supportInvalidateOptionsMenu();
             } else if (requestCode == REQUEST_CODE_EDIT) {
                 Toast.makeText(this, R.string.msg_edit_success, Toast.LENGTH_LONG).show();
             }
@@ -100,9 +102,13 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
                         .setPositiveButton(R.string.lbl_yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                // Delete and show a message
                                 serviceOrder.delete();
                                 Toast.makeText(ServiceOrderListActivity.this, R.string.msg_delete_success, Toast.LENGTH_LONG).show();
-                                updateAdapterItens();
+                                // Update recycler view dataset
+                                updateRecyclerItens();
+                                // Force onPrepareOptionsMenu call
+                                supportInvalidateOptionsMenu();
                             }
                         })
                         .setNeutralButton(R.string.lbl_no, null)
@@ -147,5 +153,13 @@ public class ServiceOrderListActivity extends AppCompatActivity implements Popup
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        final MenuItem menuShare = menu.findItem(R.id.actionShare);
+        final boolean menuShareVisible = mServiceOrdersAdapter.getItemCount() > 0;
+        menuShare.setEnabled(menuShareVisible).setVisible(menuShareVisible);
+        return super.onPrepareOptionsMenu(menu);
     }
 }
