@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".controllers.ServiceOrderActivity">
+
+    <item
+        android:id="@+id/actionCall"
+        android:title="@string/lbl_call" />
+
+    <item
+        android:id="@+id/actionEdit"
+        android:title="@string/lbl_edit" />
+
+    <item
+        android:id="@+id/actionDelete"
+        android:title="@string/lbl_delete" />
+
+</menu>
