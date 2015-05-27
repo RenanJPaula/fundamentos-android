@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".controllers.ServiceOrderActivity">
+
+    <item
+        android:id="@+id/actionSave"
+        android:title="@string/lbl_save"
+        android:icon="@mipmap/ic_action_save"
+        app:showAsAction="always" />
+
+</menu>
