@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.provider.ContactsContract;
@@ -20,6 +21,7 @@ import android.widget.Switch;
 
 import com.example.administrador.myapplication.R;
 import com.example.administrador.myapplication.models.entities.ServiceOrder;
+import com.example.administrador.myapplication.models.services.ServiceOrderService;
 import com.example.administrador.myapplication.util.AppUtil;
 
 import java.text.DateFormat;
@@ -173,9 +175,7 @@ public class ServiceOrderActivity extends AppCompatActivity {
             mServiceOrder.setDate(serviceOrderCalendar.getTime());
             mServiceOrder.setValue(Double.valueOf(mEditTextValue.getText().toString().trim()));
             mServiceOrder.setDescription(mEditTextDescription.getText().toString().trim());
-            mServiceOrder.save();
-            super.setResult(RESULT_OK);
-            super.finish();
+            new SaveServiceOrderTask().execute(mServiceOrder);
         }
     }
 
@@ -240,4 +240,21 @@ public class ServiceOrderActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    public class SaveServiceOrderTask extends AsyncTask<ServiceOrder, Void, Void> {
+
+        @Override
+        protected Void doInBackground(ServiceOrder... params) {
+            ServiceOrderService.save(params[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            ServiceOrderActivity.super.setResult(RESULT_OK);
+            ServiceOrderActivity.super.finish();
+        }
+    }
+
+
 }
