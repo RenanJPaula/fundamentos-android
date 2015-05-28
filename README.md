@@ -17,5 +17,5 @@
 <h2>Avaliação</h2>
 <p>- Criar uma tabela de usuário e incluir um usuário padrão.</p>
 <p>- Implementar o mecanismo de autenticação para entrar no app.</p>
-<p>- Adicionar na classe ServiceOrder um atributo chamado active e atualizar o mecanismo de deleção para um mecanismo de Arquivamento.</p>
-<p>- Implementar um menu para permitir a filtragem das ServiceOrders através do atributo active. Ao entrar na listagem, por padrão, deverão vir as ServiceOrders não arquivadas.</p>
+<p>- Adicionar na classe ServiceOrder um atributo chamado active e atualizar o mecanismo de deleção para um mecanismo de arquivamento.</p>
+<p>- Implementar um item de menu para permitir a filtragem das ServiceOrders através do atributo active. Ao entrar na listagem, por padrão, deverão vir as ServiceOrders não arquivadas.</p>
