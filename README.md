@@ -14,5 +14,8 @@
   <li><a href="https://docs.google.com/presentation/d/1d_2Ul6P_YSDwjtbS2MCPu5tie7BsM232MC8vJVIFLJk/edit?usp=sharing">HTTP e REST</a></li>
 </ul>
 
-<hr/>
-<p>Qualquer dúvida estou a disposição! ^^</p>
+<h2>Avaliação</h2>
+<p>- Criar uma tabela de usuário e incluir um usuário padrão.</p>
+<p>- Implementar o mecanismo de autenticação para entrar no app.</p>
+<p>- Adicionar na classe ServiceOrder um atributo chamado active e atualizar o mecanismo de deleção para um mecanismo de Arquivamento.</p>
+<p>- Implementar um menu para permitir a filtragem das ServiceOrders através do atributo active. Ao entrar na listagem, por padrão, deverão vir as ServiceOrders não arquivadas.</p>
