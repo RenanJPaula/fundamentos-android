@@ -21,7 +21,8 @@
 <p>- Implementar um item de menu para permitir a filtragem das ServiceOrders através do atributo active. Ao entrar na listagem, por padrão, deverão vir as ServiceOrders não arquivadas.</p>
 
 <h3>Observações</h3>
-<p>- O projeto de avaliação deve ser publicano no github pessoal do participante com o nome de "avaliacao-fundamentos-android" e o mesmo deve favoritar este projeto. Através deste processo que identificaremos o github dos participantes para efetuarmos os devidos feedbacks.</p>
+<p>- O projeto de avaliação deve ser publicano no github pessoal do participante com o nome de "avaliacao-fundamentos-android".</p>
+<p>- Os participantes devem favoritar o repositório do curso! É através deste processo que identificaremos o github dos participantes para efetuarmos as devidas avaliações e feedbacks.</p>
 <p>- Os feedbacks serão dados através do sistema de issues do github.</p>
 <p>- As funcionalidades extras que o participante quiser destacar devem ser descritas no README do seu projeto.</p>
 <p>- A avaliação dos projetos terá início no dia 01/06/2015.</p>
