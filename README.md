@@ -19,7 +19,7 @@
   1.	Manipulando Views
   2.	List Views
   3.	Adapters
-  4.	<a href="https://docs.google.com/presentation/d/1jhxxk5BdZnFWAKj7zAFfXUisVKOiaTApE-t1G1cLO7I/edit?usp=sharing">Intent e Intent Filters</a>
+4.	<a href="https://docs.google.com/presentation/d/1jhxxk5BdZnFWAKj7zAFfXUisVKOiaTApE-t1G1cLO7I/edit?usp=sharing">Intent e Intent Filters</a>
   1.	Intent
   2.	Intent Filters
   3.	Serializable
