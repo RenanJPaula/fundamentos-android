@@ -52,7 +52,7 @@
 10.	Publicação [Extra]
   1.	Exportação de APK
   2.	ProGuard
-  3.	Goolge Play Store
+  3.	Google Play Store
 
 <h2>Avaliação</h2>
 <p>- Criar uma tabela de usuário e incluir um usuário padrão.</p>
